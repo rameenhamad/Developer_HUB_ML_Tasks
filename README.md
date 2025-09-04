@@ -63,7 +63,7 @@ Used **VGG16 (ImageNet weights)** as a frozen base model with additional dense l
 - Validation loss slightly increased **(0.44 → 0.49)**, indicating higher accuracy but less confidence on unseen data.
 - Overall, **VGG16** transfer learning outperformed the **custom CNN** with stronger feature extraction and stable results.
 
-## Task 2: Pneumonia Detection (Chest X-Ray Images)
+## Task 3.2: Pneumonia Detection (Chest X-Ray Images)
 
 ### Objective:
 - Classify chest X-rays as Normal or Pneumonia using a simple CNN.
