@@ -62,3 +62,26 @@ Used **VGG16 (ImageNet weights)** as a frozen base model with additional dense l
 - Loss also decreased **(Train: 0.43 → 0.26, Test: 0.43 → 0.31)**.
 - Validation loss slightly increased **(0.44 → 0.49)**, indicating higher accuracy but less confidence on unseen data.
 - Overall, **VGG16** transfer learning outperformed the **custom CNN** with stronger feature extraction and stable results.
+
+## Task 2: Pneumonia Detection (Chest X-Ray Images)
+
+### Objective:
+- Classify chest X-rays as Normal or Pneumonia using a simple CNN.
+### Dataset & Preprocessing:
+
+- Kaggle Chest X-Ray dataset (4186 train, 1046 val, 624 test).
+- Images resized to 128×128, normalized, and augmented (flip, rotation, zoom, contrast).
+
+### Model:
+- **CNN** with **2 Conv layers (128, 256 filters)**, BatchNorm, MaxPooling, Dropout.
+- Global Average Pooling + Dense layers → Sigmoid output.
+- **~319K parameters**, trained with Adam + Binary Crossentropy.
+
+### Results:
+- Train Accuracy: 78%
+- Validation Accuracy: 86.7%
+- Test Accuracy: 72.6%
+- ROC Curve AUC ≈ 0.82
+
+### Observation:
+Validation accuracy was strong, but lower test accuracy suggests some overfitting.
