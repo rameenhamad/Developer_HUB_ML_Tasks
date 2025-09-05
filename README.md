@@ -64,18 +64,17 @@ Detect different types of skin cancer using transfer learning with ResNet50.
 ### Preprocessing:
 - Images resized to 128×128 and normalized with ResNet50 preprocessing.
 - Applied data augmentation (flip, rotation, zoom, contrast).
-- Balanced classes using computed class weights.
 ### Model (Transfer Learning):
 - Base: **ResNet50** (pre-trained on ImageNet, frozen layers).
-- Added MaxPooling → Flatten → Dense(128, ReLU, BatchNorm, Dropout) → Softmax output (9 classes).
+- Added MaxPooling → Flatten → Dense(128, ReLU, regularization, BatchNorm, Dropout) → Softmax output (9 classes).
 - Optimizer: **Adam** (lr=1e-2 with ReduceLROnPlateau).
 - Loss: **Sparse Categorical Crossentropy**.
 ### Results:
-- Training accuracy reached 94%+.
-- Validation accuracy plateaued around 56%.
-- Test accuracy: 44.9% (high overfitting observed).
+- Training accuracy reached 86%+.
+- Validation accuracy plateaued around 61%.
+- Test accuracy: 51.9% (high overfitting observed).
 ### Observation:
-**ResNet50** successfully learned from training data, but performance on unseen data was weak due to overfitting. More fine-tuning or regularization is needed.
+**ResNet50** successfully learned from training data, but performance on unseen data was weak due to overfitting. More fine-tuning is needed.
 
 ## Task 3.2: Pneumonia Detection (Chest X-Ray Images)
 
